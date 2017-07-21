@@ -1,0 +1,61 @@
+<h1 class="center">Index</h1>
+<div class="container">
+
+
+  <!-- Modal Trigger -->
+  <!--<button data-target="modal1" class="btn modal-trigger">Modal</button>-->
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+
+    </div>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Address</th>
+      <th>City</th>
+      <th>Pup code</th>
+      <th>Pup type</th>
+      <th>Pickup time</th>
+      <th>Municipality</th>
+      <th>Label name</th>
+      <th>Google Maps</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @user_data.each do |user| %>
+            <tr>
+              <td>
+                <%= user.address %>
+              </td>
+              <td>
+                <%= user.city %>
+              </td>
+              <td>
+                <%= user.pupcode %>
+              </td>
+              <td>
+                <%= user.puptype %>
+              </td>
+              <td>
+                <%= user.pickuptime %>
+              </td>
+              <td>
+                <%= user.municipality %>
+              </td>
+              <td>
+                <%= user.labelname %>
+              </td>
+              <td>
+                <button data-target="modal1" class="btn modal-trigger" data="<%= user.maplatitude %>,<%= user.maplongitude %>">Map</button>
+              </td>
+            </tr>
+
+    <% end %>
+
+    </tbody>
+  </table>
+</div>

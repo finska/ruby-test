@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Blog</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'materialize.min', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+</head>
+
+<body>
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper deep-orange">
+    <a href="/" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts/new">Add User</a></li>
+      <!-- Dropdown Trigger -->
+      <li>
+        <a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<%= yield %>
+<%= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'materialize.min', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'main', 'data-turbolinks-track': 'reload' %>
+</body>
 </html>
