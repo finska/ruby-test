@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card deep-orange darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><%= @userId.city %></span>
+          <p>Information about store:</p>
+          <p>Address: <%= @userId.address %></p>
+          <p>Pup code: <%= @userId.pupcode %></p>
+          <p>Pup type: <%= @userId.puptype %></p>
+          <p>Pickup time: <%= @userId.pickuptime %></p>
+          <p>Municipality: <%= @userId.municipality %></p>
+          <p>Label name: <%= @userId.labelname %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Edit', edit_posts_path(@userId) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

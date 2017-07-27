@@ -1,0 +1,46 @@
+<div class="container">
+  <%= form_for @userId, url: posts_path(@userId), method: :patch do |f| %>
+  <h3 class="center">Update</h3>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="address" name="address" type="text" class="validate" value="<%= @userId.address %>">
+      <label for="address">Address</label>
+    </div>
+
+    <div class="input-field col s6">
+      <input id="city" name="city" type="text" class="validate" value="<%= @userId.city %>">
+      <label for="city">City</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s3">
+      <input id="pup-code" name="pupcode" type="text" class="validate" value="<%= @userId.pupcode %>">
+      <label for="pup-code">Pup code</label>
+    </div>
+    <div class="input-field col s3">
+      <input id="pup-type" name="puptype" type="text" class="validate" value="<%= @userId.puptype %>">
+      <label for="pup-type">Pup type</label>
+    </div>
+    <div class="input-field col s3">
+      <input id="pickup-time" name="pickuptime" type="text" class="validate" value="<%= @userId.pickuptime %>">
+      <label for="pickup-time">Pickup time</label>
+    </div>
+    <div class="input-field col s3">
+      <input id="municipality" name="municipality" type="text" class="validate" value="<%= @userId.municipality %>">
+      <label for="municipality">Municipality</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6 offset-s3">
+      <input id="label-name" name="labelname" type="text" class="validate" value="<%= @userId.labelname %>">
+      <label for="label-name">Label name</label>
+    </div>
+  </div>
+  <div class="center">
+    <button class="btn waves-effect waves-light" type="submit" name="action">Update</button>
+  </div>
+
+
+  <% end %>
+</div>
