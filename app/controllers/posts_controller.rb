@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @user_data = User.all
+    @user_data = User.all.take(50).reverse
   end
 
   def show
-    @userId = User.find(params[:id])
+    @userId = User.find(params[:format])
   end
 
   def new
@@ -17,19 +17,30 @@ class PostsController < ApplicationController
 
   def update
     @userId = User.find(params[:format])
-    if (@userId.update(post_params))
-      redirect_to @userId
+    if (@userId.update_attributes(post_params))
+      redirect_to '/', :notice => 'User was updated'
     else
       render 'edit'
     end
   end
 
   def create
-    render plain: params[:post].inspect
+    @user = User.new(post_params)
+    if (@user.save)
+      redirect_to '/'
+    else
+      render 'new'
+    end
+  end
+
+  def destroy
+    User.find(params[:format]).destroy
+    flash[:success] = 'User deleted'
+    redirect_to '/'
   end
 
   def post_params
-    params.require(:user).permit(:address, :city, :pupcode, :puptype, :pickuptime, :municipality, :labelname)
+    params.permit(:address, :city, :pupcode, :puptype, :pickuptime, :municipality, :labelname)
   end
 
 end

@@ -55,10 +55,11 @@
                 <button data-target="modal1" class="btn modal-trigger google-maps" data="<%= user.maplatitude %>,<%= user.maplongitude %>">Map</button>
               </td>
               <td>
-                <a href="/post/<%= user.id %>"  id="update-btn" class="btn blue">Show</a>
+                <a href="/posts.<%= user.id %>" id="update-btn" class="btn blue">Show</a>
               </td>
               <td>
-                <a href="" class="btn red">Delete</a>
+                <%= link_to 'delete', posts_path, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn red' %>
+
               </td>
             </tr>
 

@@ -1,36 +1,47 @@
-<h1 class="center">Add User</h1>
-<%= form_for :post, url: posts_path do |f| %>
-        <div class="container">
+<div class="container">
+  <%= form_for :user, url: posts_path do |f| %>
+          <h3 class="center">Update</h3>
+
           <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s6 offset-s3">
-                  <input id="first_name" type="text" class="validate">
-                  <label for="first_name">First Name</label>
-                </div>
+            <div class="input-field col s6">
+              <input id="address" name="address" type="text" class="validate">
+              <label for="address">Address</label>
+            </div>
 
-              </div>
-              <div class="row">
-                <div class="input-field col s6 offset-s3">
-                  <input id="last_name" type="text" class="validate">
-                  <label for="last_name">Last Name</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s6 offset-s3">
-                  <input id="password" type="password" class="validate">
-                  <label for="password">Password</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s6 offset-s3">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Email</label>
-                </div>
-              </div>
-            </form>
+            <div class="input-field col s6">
+              <input id="city" name="city" type="text" class="validate">
+              <label for="city">City</label>
+            </div>
           </div>
-        </div>
+          <div class="row">
+            <div class="input-field col s3">
+              <input id="pup-code" name="pupcode" type="text" class="validate">
+              <label for="pup-code">Pup code</label>
+            </div>
+            <div class="input-field col s3">
+              <input id="pup-type" name="puptype" type="text" class="validate">
+              <label for="pup-type">Pup type</label>
+            </div>
+            <div class="input-field col s3">
+              <input id="pickup-time" name="pickuptime" type="text" class="validate">
+              <label for="pickup-time">Pickup time</label>
+            </div>
+            <div class="input-field col s3">
+              <input id="municipality" name="municipality" type="text" class="validate">
+              <label for="municipality">Municipality</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input id="label-name" name="labelname" type="text" class="validate">
+              <label for="label-name">Label name</label>
+            </div>
+          </div>
+          <div class="center">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Update</button>
+          </div>
 
-<% end %>
+
+  <% end %>
+</div>
 

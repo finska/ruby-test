@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for :user, url: posts_path(@userId), method: :patch do |f| %>
+  <%= form_for @userId, url: posts_path(@userId), method: :patch do |f| %>
   <h3 class="center">Update</h3>
 
   <div class="row">
